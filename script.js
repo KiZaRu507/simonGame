@@ -15,5 +15,5 @@ box3.addEventListener('click',()=>{
     console.log('clicked');
 })
 function playGame(){
-    
+
 }
