@@ -1,7 +1,9 @@
-const box1=document.querySelector('.box1');
-const box2=document.querySelector('.box2');
-const box3=document.querySelector('.r2box1');
-const box4=document.querySelector('.r2box2');
+const colors=["red","green","blue","yellow"];
+
+const box1=document.querySelector('.green');
+const box2=document.querySelector('.red');
+const box3=document.querySelector('.yellow');
+const box4=document.querySelector('.blue');
 box4.addEventListener('click',()=>{
     console.log('clicked');
 })
