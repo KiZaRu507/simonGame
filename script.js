@@ -1,4 +1,5 @@
 const colors=["red","green","blue","yellow"];
+const gamePattern=[];
 
 const box1=document.querySelector('.green');
 const box2=document.querySelector('.red');
@@ -15,7 +16,13 @@ box2.addEventListener('click',()=>{
 })
 box3.addEventListener('click',()=>{
     console.log('clicked');
+    
 })
-function playGame(){
-
+var randomNumber;
+var randomChoosenColor=colors[randomNumber];
+function sequenceGenerator(){
+    randomNumber=Math.floor(Math.random()*4);
+    
 }
+gamePattern.push(randomChoosenColor);
+
