@@ -1,28 +1,49 @@
 const colors=["red","green","blue","yellow"];
-const gamePattern=[];
+var gamePattern=[];
+var level=0;
+window.addEventListener('keydown',(e)=>{
+    if(e.code=='KeyA'){
+        console.log("success");
+        sequenceGenerator();
+        title.innerHTML=`${"You are at level "+level}`
+    }
+});
 
+const title=document.querySelector('.title');
 const box1=document.querySelector('.green');
 const box2=document.querySelector('.red');
 const box3=document.querySelector('.yellow');
 const box4=document.querySelector('.blue');
 box4.addEventListener('click',()=>{
-    console.log('clicked');
+    $(".blue").fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
 })
 box1.addEventListener('click',()=>{
-    console.log('clicked');
+    $(".green").fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
 })
 box2.addEventListener('click',()=>{
-    console.log('clicked');
+    $(".red").fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
 })
 box3.addEventListener('click',()=>{
-    console.log('clicked');
+    $(".yellow").fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
     
 })
-var randomNumber;
-var randomChoosenColor=colors[randomNumber];
+
+
 function sequenceGenerator(){
-    randomNumber=Math.floor(Math.random()*4);
+    var randomNumber;
+    var randomChoosenColor;
+    for(var i=0;i<3;i++){
+        randomNumber=Math.floor(Math.random()*4);
+        randomChoosenColor=colors[randomNumber];
+        gamePattern.push(randomChoosenColor);
+    }
+    for(var i=0;i<3;i++){
+            $(`${'.'+gamePattern[i]}`).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+        
+        
+    }
+    console.log(gamePattern);
+    level++;
+    gamePattern=[];
     
 }
-gamePattern.push(randomChoosenColor);
-
