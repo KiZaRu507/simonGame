@@ -9,6 +9,11 @@ window.addEventListener('keydown',(e)=>{
         title.innerHTML=`${"You are at level "+level}`
     }
 });
+window.addEventListener('keydown',(e)=>{
+    if(e.code=="KeyR"){
+        sequenceGenerator();
+    }
+})
 var count=0;
 const clickbar=document.querySelector('.clicks');
 const title=document.querySelector('.title');
@@ -29,7 +34,7 @@ box4.addEventListener('click',()=>{
 
         }
         else{
-            alert('failed');
+            title.innerHTML=`oops you got out on level ${level}`;
         }
     }
 })
@@ -46,7 +51,7 @@ box1.addEventListener('click',()=>{
 
         }
         else{
-            alert('failed');
+            title.innerHTML=`oops you got out on level ${level}`;
         }
     }
 })
@@ -63,7 +68,7 @@ box2.addEventListener('click',()=>{
 
         }
         else{
-            alert('failed');
+            title.innerHTML=`oops you got out on level ${level}`;
         }
     }
     
@@ -80,7 +85,7 @@ box3.addEventListener('click',()=>{
             sequenceGenerator();
         }
         else{
-            alert('failed');
+            title.innerHTML=`oops you got out on level ${level}`;
         }
     }
     
@@ -96,11 +101,10 @@ function sequenceGenerator(){
         gamePattern.push(randomChoosenColor);
     }
     for(var i=0;i<3;i++){
-            $(`${'.'+gamePattern[i]}`).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
-        
+        $(`${'.'+gamePattern[i]}`).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200);
+            
      }
     console.log(gamePattern);
-    console.log(gamePattern==userInput);
     count=0;
     title.innerHTML=`${"You are at level "+level}`
     
